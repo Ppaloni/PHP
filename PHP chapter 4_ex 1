@@ -1,0 +1,10 @@
+//Kirjoita PHP-skripti, joka tulostaa itseisarvon alla olevaan lomakkeeseen annetusta luvusta.
+
+<form action="itseisarvo.php" method="get">
+Luku: <input type="text" name="luku">
+<input type="submit" value="Lähetä">
+</form>
+
+<?php
+	echo "Luvun " .$_GET["luku"]. " itseisarvo on " .(abs($_GET["luku"]))
+?>

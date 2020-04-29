@@ -1,0 +1,35 @@
+//Tee PHP-skripti, joka tulostaa työntekijän saaman bruttopalkan, veron osuuden palkasta sekä nettopalkan. Lomake jolla tarvittavat tiedot lähetetään on seuraavanlainen:
+
+<form action="palkanlaskenta.php" method="get">
+Tehtyjen työtuntien määrä: <input type="text" name="tunnit">
+Tuntipalkka: <input type="text" name="tuntipalkka">
+Veroprosentti: <input type="text" name="veroprosentti">
+<input type="submit" value="Lähetä">
+</form>
+
+//Jos kaikkia kolmea tietoa ei annettu, ohjelman pitää tulostaa teksti: "Et antanut kaikkia tietoja!". Vihje: Veron osuus palkasta saadaan laskettua kaavalla: tunnit*tuntipalkka*veroprosentti/100
+//Huom! Käytä rivinvaihtona \n (ei <br>)
+
+Esimerkki tulos:
+Palkka ilman veroja:  624
+Veron osuus palkasta: 143.52
+Palkka verojen jälkeen: 480.48
+
+<?php
+    $tunnit = $_GET["tunnit"];
+    $tuntipalkka = $_GET["tuntipalkka"];
+    $vero = $_GET["veroprosentti"];
+    if(empty($tunnit) || empty($tuntipalkka) || empty($vero))
+    {
+        echo "Et antanut kaikkia tietoja!";
+    }
+    else
+    {
+        $brutto = $tunnit*$tuntipalkka;
+        $verovahennys = $tunnit*$tuntipalkka*$vero/100;
+        $netto = $brutto-$verovahennys;
+        echo "Palkka ilman veroja: ".$brutto;
+        echo "Veron osuus palkasta: ".$verovahennys;
+        echo "Palkka verojen jälkeen: ".$netto;
+    }
+?>

@@ -1,0 +1,11 @@
+//Kirjoita PHP-skripti, joka tulostaa alla olevaan lomakkeeseen annetut tiedot.
+
+<form action="lempiasiat.php" method="get">
+Lempiväri: <input type="text" name="lempivari"><br>
+Lempiruoka: <input type="text" name="lempiruoka">
+<input type="submit" value="Lähetä">
+</form>
+
+Lempivärisi on <?php echo $_GET["lempivari"]; ?>
+ja lempiruokasi on <?php echo $_GET["lempiruoka"]; ?>
+

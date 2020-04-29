@@ -1,0 +1,21 @@
+//Kirjoita PHP-skripti, joka tulostaa kertolaskun ja jakolaskun tuloksen alla olevaan lomakkeeseen annetuista luvuista. Jakolaskussa ensimmäinen luku toimii jaettavana ja toinen luku jakajana. Jos toinen luku on nolla, ohjelman pitää tulostaa jakolaskun tulokseksi teksti: Nollalla ei saa jakaa.
+
+<form action="laskutoimituksia.php" method="get">
+Ensimmäinen luku: <input type="text" name="ekaluku">
+Toinen luku: <input type="text" name="tokaluku">
+<input type="submit" value="Lähetä">
+</form>
+
+<?php
+$eka = $_GET["ekaluku"];
+$toka = $_GET["tokaluku"];
+echo "Kertolaskun tulos: ".($eka * $toka)." ";
+    if($toka==0)
+    {
+        echo "Jakolaskun tulos: nollalla ei saa jakaa";
+    }
+    else
+    {
+        echo "Jakolaskun tulos: ".($eka / $toka);
+    }
+?>

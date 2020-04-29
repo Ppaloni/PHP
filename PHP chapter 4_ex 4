@@ -1,0 +1,23 @@
+//Tee PHP-skripti joka tulostaa luvut lomakkeella annetusta luvusta nollaan saakka. Luvut pitää erotella toisistaan välilyönneillä, mutta viimeisen luvun eli nollan perään ei saa tulla välilyöntiä. Jos käyttäjän syöttämä luku on pienempi kuin nolla, tulostetaan teksti: "Luvun pitää olla vähintään nolla!". Lomake jolla luku lähetetään on seuraavanlainen:
+
+<form action="luvut.php" method="get">
+Luku: <input TYPE="text" name="luku"><br>
+<input type="submit" value="Lähetä">     
+</form>
+
+
+<?php
+$luku=$_GET["luku"];
+if($luku >= 0) {
+    while ($luku >= 0) {
+        if($luku == 0){
+            echo $luku;
+            break;
+        }
+        echo $luku . " ";
+        $luku--;
+    }
+}else{
+    echo "Luvun pitää olla vähintään nolla!";
+}
+?>
