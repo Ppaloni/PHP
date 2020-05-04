@@ -1,0 +1,27 @@
+/* Tee PHP-skripti, joka tarkistaa, onko luku syötetty luku parillinen vai pariton. 
+Jos syötetty luku on parillinen, tulostuu näytölle "Luku X on parillinen.". 
+Jos luku on pariton, tulostuu näytölle "Luku X on pariton.". X-kirjaimen paikalle tulee siis käyttäjältä syötteenä saatava luku.
+Jos käyttäjä antaa syötteenä nollan tai negatiivisen luvun, tulostaa ohjelma näytölle ilmoituksen "Antamasi syöte ei ollut kelvollinen!".
+
+Vihje: Luku on parillinen, jos sen jakojäännös kahdella jaettaessa on 0.
+
+Lomake jolla luku lähetetään on seuraavanlainen:
+<form action="parillisuus.php" method="get">
+Luku: <input TYPE="text" name="luku"><br>
+<input type="submit" value="Lähetä">     
+</form> */
+
+//ratkaisu:
+
+<?php
+$s=$_GET["luku"];
+
+if ($s<=0){
+    echo "Antamasi syöte ei ollut kelvollinen!";
+}    elseif ($s % 2 == 0) {
+    echo "Luku $s on parillinen.";
+}    else {
+    echo "Luku $s on pariton.";
+}
+    
+?>

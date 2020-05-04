@@ -1,0 +1,29 @@
+/* Tehtävänäsi on täydentää alla olevaa ohjelmaa määrittelemällä puuttuvat muuttujat niin, että ohjelman tulostus vastaa esimerkkitulostusta. Tekstikenttään kirjoitetaan siis vain puuttuvat lauseet, ei koko ohjelmaa.
+
+Täydennettävä ohjelma:
+
+<?php
+
+    // Sinun koodi tulee tähän
+
+    $tulostus = implode(",",$a);
+    echo $teksti;
+    echo "Ostin $lkm {$elain}a.\n";
+    echo "Taulukon sisältö: $tulostus";
+?> */
+
+//ratkaisu:
+
+<?php
+
+$a = array (9,7,5);
+$lkm = count($a);
+$elain = "kissa";
+$teksti="Lainausmerkkien(\" ja \") sisällä voi käyttää kenoviivalla(\) merkittyjä erikoiskoodeja.";
+
+$tulostus = implode(",",$a);
+echo $teksti;
+echo "Ostin $lkm {$elain}a.\n";
+echo "Taulukon sisältö: $tulostus";
+
+?>

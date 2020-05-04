@@ -1,0 +1,51 @@
+/* Tehtävänäsi on täydentää alla olevaa PHP-skriptiä, jonka on tarkoitus tulostaa lomakkeelta lähetyt luvut järjestettynä. Skriptin tulee järjestää luvut suurimmasta pienimpään sekä pienimmästä suurimpaan ja tulostaa ne esimerkkitulostuksen mukaisesti. Luvut lähetään skriptille merkkijonona niin, että luvut on eroteltu toisistaan pilkulla (esim. 4,2,5,2). Luvut erotellaan taulukoksi explode funktiolla. PHP:n valmiin sort-funktion käyttö on kielletty. Järjestäminen täytyy tehdä for-lauseella.
+
+Täydennettävä ohjelma: */
+
+<?php
+    $lukujono = $_GET['lukujono'];
+    $taulukko = explode(',',$lukujono);
+
+    echo "Järjestys aluksi: $lukujono\n";
+   
+    // Sinun koodi tulee tähän
+
+    echo "Suurimmasta pienimpään: $suurin_pienin\n";
+    echo "Pienimmästä suurimpaan: $pienin_suurin\n";
+?>
+
+// Ratkaisussa on vielä jotain häikkää, ei suostu toimimaan sellaisenaan ainakaan Viopen alustalla. 
+//Olisi varmaa hyvä ajaa läpi compilerista ja katsoa mitä se sanoo koodista.
+<?php
+
+    $lukujono = $_GET['lukujono'];
+    $taulukko = explode(',',$lukujono);
+
+    echo "Järjestys aluksi: $lukujono\n";
+	
+	for ($i=0;$i<count($lukujono);$i++)
+        {
+          if ($get_largest<$lukujono[$i])
+
+             {$get_largest=$lukujono[$i];
+              $get_largest=range(0,count($lukujono));
+
+         }
+
+
+           if ($get_smallest>$lukujono[$i])
+
+           { 
+               $get_smallest=$lukujono[$i];
+               $get_smallest=range(0,count($lukujono));
+
+           }
+         }
+
+          $suurin_pienin=explode(',',$get_largest);
+          $pienin_suurin=explode(',',$get_smallest);
+		  
+	echo "Suurimmasta pienimpään: $suurin_pienin\n";
+	echo "Pienimmästä suurimpaan: $pienin_suurin\n;
+	
+?>

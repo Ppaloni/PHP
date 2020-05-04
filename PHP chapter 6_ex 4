@@ -1,0 +1,47 @@
+/* Tee ohjelma joka suorittaa valitun laskutoimituksen kahdelle annetulle luvulle. 
+PHP-skriptin täytyy tulostaa suoritettu laskutoimitus ja laskun tulos. 
+Jos molempia lukuja ei anneta tulostetaan teksti: "Et antanut molempia lukuja!". 
+Lomake, jolla tiedot lähetetään on seuraavanlainen:
+
+<form action="laskukone.php" method="get">
+<input TYPE="text" name="ekaluku">
+<select name="operator">
+<option value=1 selected>+</option>
+<option value=2>-</option>
+<option value=3>*</option>
+<option value=4>/</option>
+</select>
+<input TYPE="text" name="tokaluku">
+<input type="submit" value="Lähetä">     
+</form> */
+
+//ratkaisu, lähdetään tekemään casella:
+
+<?php
+    
+    
+    $result1 = $_GET["ekaluku"];
+    $result2 = $_GET["tokaluku"];
+    $operator = $_GET["operator"];
+if ($result1 == "" || $result2=="")  {
+    echo "Et antanut molempia lukuja!"; 
+    }else{
+    switch ($operator) {
+        case "1":
+        echo "$result1 + $result2 = ".($result1 + $result2)."";
+        break;
+        case "2":
+        echo "$result1 - $result2 = ".($result1 - $result2)."";
+        break;
+        case "3":
+        echo "$result1 * $result2 = ".($result1 * $result2)."";
+        break;
+        case "4":
+        echo "$result1 / $result2 = ".($result1 / $result2)."";
+        break;
+    
+    }}
+        
+?>
+
+

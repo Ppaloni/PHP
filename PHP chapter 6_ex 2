@@ -1,0 +1,26 @@
+/* Tee PHP-skripti, joka tulostaa syötetyt merkkijonot ja niiden yhteenlasketun pituuden esimerkkitulostuksen mukaisesti. 
+Merkkijonoista pitää poistaa alussa ja lopussa olevat ylimääräiset tyhjät merkit ennen kuin sen merkkien lukumäärä lasketaan ja se tulostetaan näytölle. 
+Jos käyttäjä ei anna molempia merkkijonoja, tulostetaan vain teksti: "Et antanut molempia merkkijonoja!". 
+Lomake jolla merkkijonot lähetetään on seuraavanlainen:
+
+
+<form action="merkkijono.php" method="get">
+Ensimmäinen merkkijono: <input TYPE="text" name="merkkijono1"><br>
+Toinen merkkijono: <input TYPE="text" name="merkkijono2"><br>
+<input type="submit" value="Lähetä">     
+</form> */
+
+// ratkaisu:
+
+<?php
+    $s=$_GET["merkkijono1"];
+    $a=$_GET["merkkijono2"];
+    if($s=="" || $a==""){
+    echo "Et antanut molempia merkkijonoja!";}
+else{
+    $b=strlen(trim($s));
+    $d=strlen(trim($a));
+    $e= $b + $d;
+ echo "Antamasi merkkijonot olivat \"$s\" ja \"$a\". Niiden pituus yhteensä on $e merkkiä!";
+}
+?>

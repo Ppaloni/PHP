@@ -1,0 +1,30 @@
+
+
+/* Tehtävänäsi on täydentää alla olevaa PHP-skriptiä, jonka on tarkoitus tulostaa summa ja keskiarvo annetuista pisteistä. Pisteet lähetään skriptille
+merkkijonona niin, että pisteet on eroteltu toisistaan pilkulla (esim. 4,2,5,2). Pisteet erotellaan taulukoksi explode-funktiolla. Skriptin on tarkoitus myös tulostaa annetut pisteet välilyönnillä erotettuna. Tekstikenttään kirjoitetaan vain puuttuvat lauseet, ei koko ohjelmaa!
+
+Täydennettävä ohjelma: */
+
+<?php
+
+    $lukujono = $_GET['lukujono'];
+    $lukutaulukko = explode(',',$lukujono);
+
+    // Sinun koodi tulee tähän
+
+    echo "Pisteet olivat: $pisteet\n";
+    echo "Pisteiden summa: $summa\n";
+    echo "Pisteiden keskiarvo: $keskiarvo";
+?>
+
+<?php
+	$lukujono = $GET['lukujono'];
+	$lukutaulukko = explode(',',$lukujono);
+$pisteet = implode(' ', $lukutaulukko);
+$summa = array_sum($lukutaulukko);
+$keskiarvo = array_sum($lukutaulukko) / count($lukutaulukko);
+
+	echo "Pisteet olivat: $pisteet\n";
+	echo "Pisteiden summa: $summa\n";
+	echo "Pisteiden keskiarvo: $keskiarvo\n";
+?>
